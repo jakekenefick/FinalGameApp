@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AA605612B03CD2E0037FD1B /* ViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA605602B03CD2E0037FD1B /* ViewControllerView.swift */; };
+		2AA605632B03CD4C0037FD1B /* ViewControllerEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA605622B03CD4C0037FD1B /* ViewControllerEmployee.swift */; };
 		359755B82B03C4DC00BDD25F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359755B72B03C4DC00BDD25F /* AppDelegate.swift */; };
 		359755BA2B03C4DC00BDD25F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359755B92B03C4DC00BDD25F /* SceneDelegate.swift */; };
 		359755BC2B03C4DC00BDD25F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359755BB2B03C4DC00BDD25F /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2AA605602B03CD2E0037FD1B /* ViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerView.swift; sourceTree = "<group>"; };
+		2AA605622B03CD4C0037FD1B /* ViewControllerEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEmployee.swift; sourceTree = "<group>"; };
 		359755B42B03C4DC00BDD25F /* ManagerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManagerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359755B72B03C4DC00BDD25F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		359755B92B03C4DC00BDD25F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				359755B92B03C4DC00BDD25F /* SceneDelegate.swift */,
 				359755BB2B03C4DC00BDD25F /* ViewController.swift */,
 				359755BD2B03C4DC00BDD25F /* Main.storyboard */,
+				2AA605622B03CD4C0037FD1B /* ViewControllerEmployee.swift */,
+				2AA605602B03CD2E0037FD1B /* ViewControllerView.swift */,
 				359755C32B03C4DD00BDD25F /* Assets.xcassets */,
 				359755C52B03C4DD00BDD25F /* LaunchScreen.storyboard */,
 				359755C82B03C4DD00BDD25F /* Info.plist */,
@@ -263,6 +269,8 @@
 			files = (
 				359755BC2B03C4DC00BDD25F /* ViewController.swift in Sources */,
 				359755B82B03C4DC00BDD25F /* AppDelegate.swift in Sources */,
+				2AA605632B03CD4C0037FD1B /* ViewControllerEmployee.swift in Sources */,
+				2AA605612B03CD2E0037FD1B /* ViewControllerView.swift in Sources */,
 				359755BA2B03C4DC00BDD25F /* SceneDelegate.swift in Sources */,
 				359755C22B03C4DC00BDD25F /* ManagerApp.xcdatamodeld in Sources */,
 			);
