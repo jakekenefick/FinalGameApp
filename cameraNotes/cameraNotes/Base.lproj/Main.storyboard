@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cameraNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QuL-Hf-Uld">
+                                <rect key="frame" x="0.0" y="107" width="393" height="128"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MUX-Gi-76S">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbZ-Q6-Zah">
+                                <rect key="frame" x="0.0" y="773.66666666666663" width="393" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylM-es-1g8">
+                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="camera"/>
+                                        <connections>
+                                            <action selector="cameraAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tS6-P1-WsS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvf-6K-V7j">
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="photos"/>
+                                        <connections>
+                                            <action selector="photoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QlR-iT-MSC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cbZ-Q6-Zah" secondAttribute="bottom" constant="10" id="06y-JP-FmB"/>
+                            <constraint firstItem="QuL-Hf-Uld" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.150235" id="HBO-qf-7nO"/>
+                            <constraint firstItem="QuL-Hf-Uld" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IoS-Sh-koj"/>
+                            <constraint firstItem="QuL-Hf-Uld" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="Pzm-XU-la9"/>
+                            <constraint firstItem="cbZ-Q6-Zah" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y3t-4E-oTd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cbZ-Q6-Zah" secondAttribute="trailing" id="k3g-lV-i2T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QuL-Hf-Uld" secondAttribute="trailing" id="klC-zL-z0i"/>
+                            <constraint firstItem="cbZ-Q6-Zah" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0402973" id="pJK-SH-Qhh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ImageOutlet" destination="MUX-Gi-76S" id="dLg-Vz-9SY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.64122137404578" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
