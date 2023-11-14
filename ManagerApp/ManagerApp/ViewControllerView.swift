@@ -7,14 +7,27 @@
 
 import UIKit
 
-class ViewControllerView: UIViewController {
-
+class ViewControllerView: UIViewController,UITableViewDelegate,UITableViewDataSource {
+   
+    
+    @IBOutlet weak var tableviewOutlet: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableviewOutlet.delegate = self
+        tableviewOutlet.dataSource = self
 
         // Do any additional setup after loading the view.
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 
     /*
     // MARK: - Navigation
