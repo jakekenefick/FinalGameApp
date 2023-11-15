@@ -19,6 +19,12 @@ class ViewControllerView: UIViewController,UITableViewDelegate,UITableViewDataSo
 
         // Do any additional setup after loading the view.
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let blah = tableView.cellForRow(at: indexPath)
+        {
+            
+        }
+        }
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AppData.employees.count
@@ -26,7 +32,7 @@ class ViewControllerView: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
-        cell.textLabel?.text = "\(AppData.employees[indexPath.row].name)"
+        cell.textLabel?.text = "\(AppData.employees[indexPath.row])"
     
         return cell
     }
