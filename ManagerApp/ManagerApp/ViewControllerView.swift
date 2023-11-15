@@ -19,14 +19,16 @@ class ViewControllerView: UIViewController,UITableViewDelegate,UITableViewDataSo
 
         // Do any additional setup after loading the view.
     }
-    
-    var a = 0
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return a.count
+        return AppData.employees.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
+        cell.textLabel?.text = "\(AppData.employees[indexPath.row])"
+    
+        return cell
     }
 
     /*
