@@ -71,7 +71,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Employee"/>
                                 <connections>
-                                    <segue destination="uJU-rM-sF1" kind="show" id="mq4-9o-5jO"/>
+                                    <segue destination="Hfb-lc-IyQ" kind="show" id="juo-qs-bqi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -86,6 +86,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTI-m9-D6z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1855.7251908396945" y="15.492957746478874"/>
+        </scene>
+        <!--View Controller Add-->
+        <scene sceneID="cOI-4r-IGz">
+            <objects>
+                <viewController id="Hfb-lc-IyQ" customClass="ViewControllerAdd" customModule="ManagerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cmt-pE-kal">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="36O-Lv-gNU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kc5-Zw-YcZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hxr-KN-DCb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1833" y="672"/>
         </scene>
         <!--View Controller Employee-->
         <scene sceneID="TgU-xP-3DI">
