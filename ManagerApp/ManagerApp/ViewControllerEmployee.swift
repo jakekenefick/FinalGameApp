@@ -17,11 +17,12 @@ class ViewControllerEmployee: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameLabel.text = AppData.employees[AppData.count].name
+        ageLabel.text = AppData.employees[AppData.count].age
+        
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 
