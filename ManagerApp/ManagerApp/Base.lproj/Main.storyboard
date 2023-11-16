@@ -81,6 +81,7 @@
                     <navigationItem key="navigationItem" id="jrw-wI-hao"/>
                     <connections>
                         <outlet property="tableviewOutlet" destination="6Hc-Up-6Zf" id="jjg-Ap-k4O"/>
+                        <segue destination="uJU-rM-sF1" kind="show" identifier="toTwo" id="bvj-Nd-oKO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTI-m9-D6z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

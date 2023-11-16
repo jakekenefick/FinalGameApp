@@ -7,6 +7,7 @@
 
 public class AppData {
     static var employees = [Employee]()
+    static var count = 0
 }
 class Employee {
     var name: String

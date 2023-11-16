@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewControllerView: UIViewController,UITableViewDelegate,UITableViewDataSource {
-   
+    
     
     @IBOutlet weak var tableviewOutlet: UITableView!
     
@@ -16,35 +16,43 @@ class ViewControllerView: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
         tableviewOutlet.delegate = self
         tableviewOutlet.dataSource = self
-
+        
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let blah = tableView.cellForRow(at: indexPath)
         {
-            
+            performSegue(withIdentifier: "toOne", sender: self)
         }
-        }
- 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppData.employees.count
+        
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
-        cell.textLabel?.text = "\(AppData.employees[indexPath.row])"
-    
-        return cell
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        let nvc = segue.destination as! ViewControllerView
     }
-    */
-
+    
+    
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return AppData.employees.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
+            cell.textLabel?.text = "\(AppData.employees[indexPath.row])"
+            
+            return cell
+        }
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
+    
 }
