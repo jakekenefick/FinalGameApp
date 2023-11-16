@@ -9,6 +9,12 @@ import UIKit
 
 class ViewControllerAdd: UIViewController {
 
+    
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var roleField: UITextField!
+    @IBOutlet weak var ageField: UITextField!
+    @IBOutlet weak var wageField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,5 +31,15 @@ class ViewControllerAdd: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    @IBAction func addButton(_ sender: Any) {
+        var name = nameField.text!
+        var role = roleField.text!
+        var age = Int(ageField.text!)
+        var wage = Double(wageField.text!)
+        
+ //       AppData.employees.append(Employee(name: name, role: role, age: age, wage: wage, hours: 0.0, bonus: 0.0))
+    }
+    
 }

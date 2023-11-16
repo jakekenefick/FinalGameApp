@@ -9,6 +9,12 @@ import UIKit
 
 class ViewControllerEmployee: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var wageLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var bonusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
