@@ -16,21 +16,28 @@ class ViewControllerView: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
         tableviewOutlet.delegate = self
         tableviewOutlet.dataSource = self
-        
+        tableviewOutlet.reloadData()
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let blah = tableView.cellForRow(at: indexPath)
-        {
-            performSegue(withIdentifier: "toOne", sender: self)
-        }
+       
+        let blah = indexPath.row
+        print(blah)
+        AppData.count = blah
+            //performSegue(withIdentifier: "toOne", sender: self)
+        performSegue(withIdentifier: "toTwo", sender: self)
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let nvc = segue.destination as! ViewControllerView
-    }
+   
     
     
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

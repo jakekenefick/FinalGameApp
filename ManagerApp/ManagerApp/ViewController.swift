@@ -34,8 +34,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AppData.employees.append(Employee(name: "bob", role: "cook", age: 5, wage: 5.0, hours: 40.2, bonus: 100.3))
+        
+        
+        
         AppData.employees.append(Employee(name: "carl", role: "manager", age: 3, wage: 5.2, hours: 40.1, bonus: 100.5))
         // Do any additional setup after loading the view.
+            
     }
 //test please
 //hello
