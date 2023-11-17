@@ -18,8 +18,10 @@ class ViewControllerEmployee: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = AppData.employees[AppData.count].name
-        ageLabel.text = AppData.employees[AppData.count].age
-        
+        ageLabel.text = "\(AppData.employees[AppData.count].age)"
+        wageLabel.text = "\(AppData.employees[AppData.count].wage)"
+        hoursLabel.text = "\(AppData.employees[AppData.count].hours)"
+        bonusLabel.text = "\(AppData.employees[AppData.count].bonus)"
         // Do any additional setup after loading the view.
     }
     
