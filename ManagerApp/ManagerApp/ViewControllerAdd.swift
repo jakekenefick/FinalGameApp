@@ -34,12 +34,12 @@ class ViewControllerAdd: UIViewController {
     
     
     @IBAction func addButton(_ sender: Any) {
-        var name = nameField.text!
-        var role = roleField.text!
+        var name = String(nameField.text!)
+        var role = String(roleField.text!)
         var age = Int(ageField.text!)
         var wage = Double(wageField.text!)
         
- //       AppData.employees.append(Employee(name: name, role: role, age: age, wage: wage, hours: 0.0, bonus: 0.0))
+        AppData.employees.append(Employee(name: name, role: role, age: age!, wage: wage!, hours: 0.0, bonus: 0.0))
     }
     
 }
