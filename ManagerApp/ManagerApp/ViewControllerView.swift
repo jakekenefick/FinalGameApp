@@ -19,6 +19,9 @@ class ViewControllerView: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableviewOutlet.reloadData()
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableviewOutlet.reloadData()
+    }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
