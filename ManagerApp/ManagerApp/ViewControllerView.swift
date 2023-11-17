@@ -21,12 +21,6 @@ class ViewControllerView: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     
-    
-    
-
-    
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         let blah = indexPath.row
