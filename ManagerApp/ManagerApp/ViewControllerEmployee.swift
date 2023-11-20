@@ -15,6 +15,8 @@ class ViewControllerEmployee: UIViewController {
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var bonusLabel: UILabel!
     
+    @IBOutlet weak var bonusTextField: UITextField!
+    @IBOutlet weak var hoursTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = AppData.employees[AppData.count].name
@@ -35,4 +37,9 @@ class ViewControllerEmployee: UIViewController {
     }
     */
 
+    @IBAction func bonusButton(_ sender: Any) {
+    }
+    
+    @IBAction func addHoursButton(_ sender: Any) {
+    }
 }

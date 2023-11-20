@@ -4,9 +4,7 @@
 //
 //  Created by WILLIAM COX on 11/15/23.
 //
-
 import UIKit
-
 class ViewControllerAdd: UIViewController {
     
     
@@ -48,19 +46,29 @@ class ViewControllerAdd: UIViewController {
             
             let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
             alert.addAction(okAction)
-           
+            
             
             present(alert, animated: true, completion: nil)
-            }
+        }
         else
         {
             AppData.employees.append(Employee(name: name, role: role, age: age!, wage: wage!, hours: 0.0, bonus: 0.0))
+            
+            
+            let alert1 = UIAlertController(title: "", message: "Employee has been added.", preferredStyle: .alert)
+            
+            
+            let yesAction = UIAlertAction(title: "OK", style: .default , handler: nil)
+            alert1.addAction(yesAction)
+            
+            
+            present(alert1, animated: true, completion: nil)
+            
+            
         }
-        
-        }
-
-        
-        
         
     }
-
+    
+}
+        
+    
