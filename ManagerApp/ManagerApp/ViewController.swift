@@ -25,6 +25,13 @@ class Employee {
         self.hours = hours
         self.bonus = bonus
     }
+    
+    public func changeName(newName: String) {
+        name = newName
+    }
+    public func changeAge(newAge: Int) {
+        age = newAge
+    }
 }
 
 import UIKit
