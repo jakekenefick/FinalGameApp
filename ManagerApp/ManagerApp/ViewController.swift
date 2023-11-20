@@ -32,6 +32,9 @@ class Employee {
     public func changeAge(newAge: Int) {
         age = newAge
     }
+    public func changeWage(newWage: Double) {
+        wage = newWage
+    }
 }
 
 import UIKit
