@@ -26,6 +26,13 @@ class ViewControllerEmployee: UIViewController {
         bonusLabel.text = "\(AppData.employees[AppData.count].bonus)"
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        nameLabel.text = AppData.employees[AppData.count].name
+        ageLabel.text = "\(AppData.employees[AppData.count].age)"
+        wageLabel.text = "\(AppData.employees[AppData.count].wage)"
+        hoursLabel.text = "\(AppData.employees[AppData.count].hours)"
+        bonusLabel.text = "\(AppData.employees[AppData.count].bonus)"        
+    }
     
     /*
     // MARK: - Navigation
