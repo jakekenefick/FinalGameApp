@@ -38,15 +38,20 @@ class ViewControllerEmployee: UIViewController {
     */
 
     @IBAction func bonusButton(_ sender: Any) {
-        var b = Double(bonusTextField.text!)! + AppData.employees[AppData.count].bonus
-        print(b)
-          bonusLabel.text = "\(b)"
+        if let a = Double(bonusTextField.text!) {
+            let b = a + AppData.employees[AppData.count].bonus
+            AppData.employees[AppData.count].bonus = b
+            bonusLabel.text = "\(b)"
+        }
+        
     }
     
     @IBAction func addHoursButton(_ sender: Any) {
-        var b = Double(hoursTextField.text!)! + AppData.employees[AppData.count].hours
-        print(b)
-          hoursLabel.text = "\(b)"
+        if let a = Double(hoursTextField.text!) {
+            let b = a + AppData.employees[AppData.count].hours
+            AppData.employees[AppData.count].hours = b
+            hoursLabel.text = "\(b)"
+        }
     }
     
     @IBAction func fireEmployeeButton(_ sender: Any) {

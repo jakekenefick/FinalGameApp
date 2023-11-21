@@ -33,41 +33,44 @@ class ViewControllerAdd: UIViewController {
     
     @IBAction func addButton(_ sender: Any) {
         
-        var name = String(nameField.text!)
-        var role = String(roleField.text!)
-        var age = Int(ageField.text!)
-        var wage = Double(wageField.text!)
+        let name = String(nameField.text!)
+        let role = String(roleField.text!)
+        let age = Int(ageField.text!)
+        let wage = Double(wageField.text!)
         
         
         
-        if(wage! < 13.00){
-            let alert = UIAlertController(title: "ERROR", message: "Below minimal wage.", preferredStyle: .alert)
-            
-            
-            let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
-            alert.addAction(okAction)
-            
-            
-            present(alert, animated: true, completion: nil)
-        }
-        else
-        {
-            AppData.employees.append(Employee(name: name, role: role, age: age!, wage: wage!, hours: 0.0, bonus: 0.0))
-            
-            
-            let alert1 = UIAlertController(title: "", message: "Employee has been added.", preferredStyle: .alert)
-            
-            
+        if let w = wage {
+            if(w < 13.00){
+                let alert = UIAlertController(title: "ERROR", message: "Below minimal wage.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
+                alert.addAction(okAction)
+                present(alert, animated: true, completion: nil)
+            }
+            else {
+                if let a = age {
+                    AppData.employees.append(Employee(name: name, role: role, age: a, wage: w, hours: 0.0, bonus: 0.0))
+                    let alert1 = UIAlertController(title: "", message: "Employee has been added.", preferredStyle: .alert)
+                    let yesAction = UIAlertAction(title: "OK", style: .default , handler: nil)
+                    alert1.addAction(yesAction)
+                    present(alert1, animated: true, completion: nil)
+                } else {
+                    let alert1 = UIAlertController(title: "", message: "Input valid values", preferredStyle: .alert)
+                    let yesAction = UIAlertAction(title: "Ok", style: .default , handler: nil)
+                    alert1.addAction(yesAction)
+                    present(alert1, animated: true, completion: nil)
+                }
+            }
+        } else {
+            let alert1 = UIAlertController(title: "", message: "Input valid values", preferredStyle: .alert)
             let yesAction = UIAlertAction(title: "OK", style: .default , handler: nil)
             alert1.addAction(yesAction)
-            
-            
             present(alert1, animated: true, completion: nil)
-            
-            
         }
-        
     }
+    
+    
+    
     
 }
         
