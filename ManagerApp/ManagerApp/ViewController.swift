@@ -8,6 +8,8 @@
 public class AppData {
     static var employees = [Employee]()
     static var count = 0
+    static let defaults = UserDefaults.standard
+
 }
 class Employee {
     var name: String
@@ -41,7 +43,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
