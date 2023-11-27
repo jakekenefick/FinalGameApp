@@ -49,11 +49,19 @@ class ViewControllerAdd: UIViewController {
             }
             else {
                 if let a = age {
-                    AppData.employees.append(Employee(name: name, role: role, age: a, wage: w, hours: 0.0, bonus: 0.0))
+                    let newEmployee = Employee(name: name, role: role, age: a, wage: w, hours: 0.0, bonus: 0.0)
+                    AppData.employees.append(newEmployee)
+                    
                     let alert1 = UIAlertController(title: "", message: "Employee has been added.", preferredStyle: .alert)
                     let yesAction = UIAlertAction(title: "OK", style: .default , handler: nil)
                     alert1.addAction(yesAction)
                     present(alert1, animated: true, completion: nil)
+                    
+                    let encoder = JSONEncoder()
+                    if let encoded = try? encoder.encode(AppData.employees) {
+                        AppData.defaults.set(encoded, forKey: "Employees")
+                    }
+                    
                 } else {
                     let alert1 = UIAlertController(title: "", message: "Input valid values", preferredStyle: .alert)
                     let yesAction = UIAlertAction(title: "Ok", style: .default , handler: nil)

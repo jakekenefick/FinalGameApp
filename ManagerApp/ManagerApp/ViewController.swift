@@ -11,7 +11,7 @@ public class AppData {
     static let defaults = UserDefaults.standard
 
 }
-class Employee {
+class Employee: Encodable, Decodable {
     var name: String
     var role: String
     var age: Int
@@ -52,6 +52,16 @@ class ViewController: UIViewController {
         
         AppData.employees.append(Employee(name: "carl", role: "manager", age: 3, wage: 5.2, hours: 40.1, bonus: 100.5))
         // Do any additional setup after loading the view.
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(AppData.employees) {
+            AppData.defaults.set(encoded, forKey: "Employees")
+        }
+        if let items = AppData.defaults.data(forKey: "Employees") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([Employee].self, from: items) {
+                AppData.employees = decoded
+                }
+            }
             
     }
 //test please

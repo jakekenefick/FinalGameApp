@@ -62,8 +62,6 @@ class ViewControllerEmployee: UIViewController {
     }
     
     @IBAction func fireEmployeeButton(_ sender: Any) {
-        AppData.employees.remove(at: AppData.count)
-
     }
     
 }
