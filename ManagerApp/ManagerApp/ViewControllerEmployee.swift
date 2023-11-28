@@ -62,6 +62,11 @@ class ViewControllerEmployee: UIViewController {
     }
     
     @IBAction func fireEmployeeButton(_ sender: Any) {
+        AppData.employees.remove(at: AppData.count)
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(AppData.employees) {
+            AppData.defaults.set(encoded, forKey: "Employees")
+        }
     }
     
 }

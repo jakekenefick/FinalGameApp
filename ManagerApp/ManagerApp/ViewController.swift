@@ -53,16 +53,19 @@ class ViewController: UIViewController {
         AppData.employees.append(Employee(name: "carl", role: "manager", age: 3, wage: 5.2, hours: 40.1, bonus: 100.5))
         // Do any additional setup after loading the view.
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(AppData.employees) {
-            AppData.defaults.set(encoded, forKey: "Employees")
-        }
+//        if let encoded = try? encoder.encode(AppData.employees) {
+//            AppData.defaults.set(encoded, forKey: "Employees")
+//        }
         if let items = AppData.defaults.data(forKey: "Employees") {
             let decoder = JSONDecoder()
             if let decoded = try? decoder.decode([Employee].self, from: items) {
+                print(decoded[0].name)
                 AppData.employees = decoded
+                for name in AppData.employees {
+                    print(name.name)
+                    }
                 }
             }
-            
     }
 //test please
 //hello
