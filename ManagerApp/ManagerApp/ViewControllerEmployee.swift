@@ -67,6 +67,9 @@ class ViewControllerEmployee: UIViewController {
         if let encoded = try? encoder.encode(AppData.employees) {
             AppData.defaults.set(encoded, forKey: "Employees")
         }
+        if AppData.employees.count == 0 {
+            AppData.employees.append(Employee(name: "default", role: "cook", age: 5, wage: 5.0, hours: 40.2, bonus: 100.3))
+        }
     }
     
 }
