@@ -10,7 +10,7 @@ public class Dice{
 
     static var count = 0
     static var logoImages: [UIImage] = []
-
+    static var numbers: [Int] = []
 }
 
 class ViewController: UIViewController {

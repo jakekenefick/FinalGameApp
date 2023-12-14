@@ -29,6 +29,14 @@ class ViewController2: UIViewController {
     @IBOutlet weak var die4LabelOutlet: UILabel!
     
     @IBOutlet weak var die5LabelOutlet: UILabel!
+    
+    @IBOutlet weak var computersScoreOutlet: UILabel!
+    
+    @IBOutlet weak var winLabelOutlet: UILabel!
+    
+    @IBOutlet weak var yourScore: UILabel!
+    
+    @IBOutlet weak var loseLabelOutlet: UILabel!
     var h = false
     var i = false
     var j = false
@@ -41,9 +49,21 @@ class ViewController2: UIViewController {
     var d = 0
     var e = 0
     var randomInt = 0
+    var roll = 0
+    var q = 0
+    var win = 0
+    var lose = 0
+    var final = 0
+    var computersScore = 0
+    var x = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        computersScore = Int.random(in: 18...28)
+        computersScoreOutlet.text = "Computers Score: \(computersScore)"
+        winLabelOutlet.text = "Win: 0"
+        loseLabelOutlet.text = " Lose: 0"
+        yourScore.text = "Your score:0"
     }
     
     
@@ -53,25 +73,13 @@ class ViewController2: UIViewController {
     @IBAction func rollAction(_ sender: UIButton) {
         if(Dice.count < 5){
            randomInt = Int.random(in: 1...6)
-   
-            if (randomInt == 1){
-                imageOutlet.image = UIImage(named : "die1")
-                
-            }
-            if (randomInt == 2){
-                imageOutlet.image = UIImage(named : "die2")
-            }
-            if (randomInt == 3){
-                imageOutlet.image = UIImage(named : "die3")
-            }
-            if (randomInt == 4){
-                imageOutlet.image = UIImage(named : "die4")
-            }
-            if (randomInt == 5){
-                imageOutlet.image = UIImage(named : "die5")
-            }
-            if (randomInt == 6){
-                imageOutlet.image = UIImage(named : "die6")
+   q += 1
+            if(q>5)
+            {
+                let alert = UIAlertController(title: "Error", message: "you can't roll until you reroll", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
+                alert.addAction(okAction)
+                present(alert, animated: true, completion: nil)
             }
             
             
@@ -81,39 +89,37 @@ class ViewController2: UIViewController {
                     if(h == false){
                     if (randomInt == 1){
                         imageDie1.image = UIImage(named : "die1")
-                        if(wow == 0){
                             Dice.logoImages.append(UIImage(named: "die1")!)
-                        }
+                        a = 1
                     }
                     if (randomInt == 2){
                         imageDie1.image = UIImage(named : "die2")
-                        if(wow == 0){
+                   
                             Dice.logoImages.append(UIImage(named: "die2")!)
-                        }
+                        a = 2
                     }
                     if (randomInt == 3){
                         imageDie1.image = UIImage(named : "die3")
-                        if(wow == 0){
+                   
                             Dice.logoImages.append(UIImage(named: "die3")!)
-                        }
+                        a = 3
                     }
                     if (randomInt == 4){
                         imageDie1.image = UIImage(named : "die4")
-                        if(wow == 0){
+                  
                             Dice.logoImages.append(UIImage(named: "die4")!)
-                        }
+                        a = 4
                     }
                     if (randomInt == 5){
                         imageDie1.image = UIImage(named : "die5")
-                        if(wow == 0){
+                 
                             Dice.logoImages.append(UIImage(named: "die5")!)
-                        }
+                        a = 5
                     }
                     if (randomInt == 6){
                         imageDie1.image = UIImage(named : "die6")
-                        if(wow == 0){
                             Dice.logoImages.append(UIImage(named: "die6")!)
-                        }
+                        a = 6
                     }
                 }
                     else{
@@ -129,26 +135,33 @@ class ViewController2: UIViewController {
                         imageDie2.image = UIImage(named : "die1")
                         
                         Dice.logoImages.append(UIImage(named: "die1")!)
+                        
+                    b = 1
                     }
                     if (randomInt == 2){
                         imageDie2.image = UIImage(named : "die2")
                         Dice.logoImages.append(UIImage(named: "die2")!)
+                        b = 2
                     }
                     if (randomInt == 3){
                         imageDie2.image = UIImage(named : "die3")
                         Dice.logoImages.append(UIImage(named: "die3")!)
+                        b = 3
                     }
                     if (randomInt == 4){
                         imageDie2.image = UIImage(named : "die4")
                         Dice.logoImages.append(UIImage(named: "die4")!)
+                        b = 4
                     }
                     if (randomInt == 5){
                         imageDie2.image = UIImage(named : "die5")
                         Dice.logoImages.append(UIImage(named: "die5")!)
+                        b = 5
                     }
                     if (randomInt == 6){
                         imageDie2.image = UIImage(named : "die6")
                         Dice.logoImages.append(UIImage(named: "die6")!)
+                        b = 6
                     }
                 }
                 else{
@@ -157,92 +170,126 @@ class ViewController2: UIViewController {
             }
             if(Dice.count == 2)
             {
-                if (randomInt == 1){
-                    imageDie3.image = UIImage(named : "die1")
-                    Dice.logoImages.append(UIImage(named: "die1")!)
-                    
+                if( j == false){
+                    if (randomInt == 1){
+                        imageDie3.image = UIImage(named : "die1")
+                        Dice.logoImages.append(UIImage(named: "die1")!)
+                        c = 1
+                        
+                    }
+                    if (randomInt == 2){
+                        imageDie3.image = UIImage(named : "die2")
+                        Dice.logoImages.append(UIImage(named: "die2")!)
+                        c = 2
+                    }
+                    if (randomInt == 3){
+                        imageDie3.image = UIImage(named : "die3")
+                        Dice.logoImages.append(UIImage(named: "die3")!)
+                        c = 3
+                    }
+                    if (randomInt == 4){
+                        imageDie3.image = UIImage(named : "die4")
+                        Dice.logoImages.append(UIImage(named: "die4")!)
+                        c = 4
+                    }
+                    if (randomInt == 5){
+                        imageDie3.image = UIImage(named : "die5")
+                        Dice.logoImages.append(UIImage(named: "die5")!)
+                        c = 5
+                    }
+                    if (randomInt == 6){
+                        imageDie3.image = UIImage(named : "die6")
+                        Dice.logoImages.append(UIImage(named: "die6")!)
+                        c = 6
+                    }
                 }
-                if (randomInt == 2){
-                    imageDie3.image = UIImage(named : "die2")
-                    Dice.logoImages.append(UIImage(named: "die2")!)
-                }
-                if (randomInt == 3){
-                    imageDie3.image = UIImage(named : "die3")
-                    Dice.logoImages.append(UIImage(named: "die3")!)
-                }
-                if (randomInt == 4){
-                    imageDie3.image = UIImage(named : "die4")
-                    Dice.logoImages.append(UIImage(named: "die4")!)
-                }
-                if (randomInt == 5){
-                    imageDie3.image = UIImage(named : "die5")
-                    Dice.logoImages.append(UIImage(named: "die5")!)
-                }
-                if (randomInt == 6){
-                    imageDie3.image = UIImage(named : "die6")
-                    Dice.logoImages.append(UIImage(named: "die6")!)
+                else{
+                    imageDie3.image = UIImage(named: "die" + "\(c)")
                 }
             }
           
             if(Dice.count == 3)
             {
-                if (randomInt == 1){
-                    imageDie4.image = UIImage(named : "die1")
-                    Dice.logoImages.append(UIImage(named: "die1")!)
-                    
+                if(k == false){
+                    if (randomInt == 1){
+                        imageDie4.image = UIImage(named : "die1")
+                        Dice.logoImages.append(UIImage(named: "die1")!)
+                        d = 1
+                        
+                    }
+                    if (randomInt == 2){
+                        imageDie4.image = UIImage(named : "die2")
+                        Dice.logoImages.append(UIImage(named: "die2")!)
+                        d = 2
+                    }
+                    if (randomInt == 3){
+                        imageDie4.image = UIImage(named : "die3")
+                        Dice.logoImages.append(UIImage(named: "die3")!)
+                        d = 3
+                    }
+                    if (randomInt == 4){
+                        imageDie4.image = UIImage(named : "die4")
+                        Dice.logoImages.append(UIImage(named: "die4")!)
+                        d = 4
+                    }
+                    if (randomInt == 5){
+                        imageDie4.image = UIImage(named : "die5")
+                        Dice.logoImages.append(UIImage(named: "die5")!)
+                        d = 5
+                    }
+                    if (randomInt == 6){
+                        imageDie4.image = UIImage(named : "die6")
+                        Dice.logoImages.append(UIImage(named: "die6")!)
+                        d = 6
+                    }
                 }
-                if (randomInt == 2){
-                    imageDie4.image = UIImage(named : "die2")
-                    Dice.logoImages.append(UIImage(named: "die2")!)
-                }
-                if (randomInt == 3){
-                    imageDie4.image = UIImage(named : "die3")
-                    Dice.logoImages.append(UIImage(named: "die3")!)
-                }
-                if (randomInt == 4){
-                    imageDie4.image = UIImage(named : "die4")
-                    Dice.logoImages.append(UIImage(named: "die4")!)
-                }
-                if (randomInt == 5){
-                    imageDie4.image = UIImage(named : "die5")
-                    Dice.logoImages.append(UIImage(named: "die5")!)
-                }
-                if (randomInt == 6){
-                    imageDie4.image = UIImage(named : "die6")
-                    Dice.logoImages.append(UIImage(named: "die6")!)
+                else{
+                    imageDie4.image = UIImage(named: "die" + "\(d)")
                 }
             }
             
             if(Dice.count == 4)
             {
-                if (randomInt == 1){
-                    imageDie5.image = UIImage(named : "die1")
-                    Dice.logoImages.append(UIImage(named: "die1")!)
-                    
+                if(l == false){
+                    if (randomInt == 1){
+                        imageDie5.image = UIImage(named : "die1")
+                        Dice.logoImages.append(UIImage(named: "die1")!)
+                        e = 1
+                        
+                    }
+                    if (randomInt == 2){
+                        imageDie5.image = UIImage(named : "die2")
+                        Dice.logoImages.append(UIImage(named: "die2")!)
+                        e = 2
+                    }
+                    if (randomInt == 3){
+                        imageDie5.image = UIImage(named : "die3")
+                        Dice.logoImages.append(UIImage(named: "die3")!)
+                        e = 3
+                    }
+                    if (randomInt == 4){
+                        imageDie5.image = UIImage(named : "die4")
+                        Dice.logoImages.append(UIImage(named: "die4")!)
+                        e = 4
+                    }
+                    if (randomInt == 5){
+                        imageDie5.image = UIImage(named : "die5")
+                        Dice.logoImages.append(UIImage(named: "die5")!)
+                        e = 5
+                    }
+                    if (randomInt == 6){
+                        imageDie5.image = UIImage(named : "die6")
+                        Dice.logoImages.append(UIImage(named: "die6")!)
+                        e = 6
+                    }
                 }
-                if (randomInt == 2){
-                    imageDie5.image = UIImage(named : "die2")
-                    Dice.logoImages.append(UIImage(named: "die2")!)
-                }
-                if (randomInt == 3){
-                    imageDie5.image = UIImage(named : "die3")
-                    Dice.logoImages.append(UIImage(named: "die3")!)
-                }
-                if (randomInt == 4){
-                    imageDie5.image = UIImage(named : "die4")
-                    Dice.logoImages.append(UIImage(named: "die4")!)
-                }
-                if (randomInt == 5){
-                    imageDie5.image = UIImage(named : "die5")
-                    Dice.logoImages.append(UIImage(named: "die5")!)
-                }
-                if (randomInt == 6){
-                    imageDie5.image = UIImage(named : "die6")
-                    Dice.logoImages.append(UIImage(named: "die6")!)
+                else{
+                    imageDie5.image = UIImage(named: "die" + "\(e)")
                 }
             }
            
             Dice.count += 1
+            
             
         }
         
@@ -251,43 +298,136 @@ class ViewController2: UIViewController {
     @IBAction func die1Action(_ sender: UIButton) {
         die1LabelOutlet.textColor = UIColor.green
         h = true
-       a = randomInt
+        x += a
+        yourScore.text = "Your Score: \(x)"
+
+      
     }
     
     @IBAction func die2Action(_ sender: UIButton) {
         die2LabelOutlet.textColor = UIColor.green
         i = true
-        b = randomInt
+       x += b
+        yourScore.text = "Your Score: \(x)"
+
     }
     
     
     @IBAction func die3Action(_ sender: UIButton) {
         die3LabelOutlet.textColor = UIColor.green
        j = true
-        c = randomInt
-        
+       x += c
+        yourScore.text = "Your Score: \(x)"
+
     }
     
     
     @IBAction func die4Action(_ sender: UIButton) {
         die4LabelOutlet.textColor = UIColor.green
         k = true
-        d = randomInt
-        
+       x += d
+        yourScore.text = "Your Score: \(x)"
+
     }
     
     @IBAction func die5Action(_ sender: UIButton) {
         die5LabelOutlet.textColor = UIColor.green
         l = true
-        e = randomInt
+       x += e
+        yourScore.text = "Your Score: \(x)"
+
     }
     
     @IBAction func rerollACtion(_ sender: UIButton) {
-        Dice.count = 0
-       
+        q = 0
+        roll+=1
+        
+        if(roll>2){
+            let alert = UIAlertController(title: "ERROR", message: "You can't roll more than 3 times!!!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+         
+            
+            
+        }
+        else{Dice.count = 0}
     
     }
     
+    @IBAction func finishAction(_ sender: UIButton) {
+        var z = a + b + c + d + e
+        if(z > computersScore)
+        {
+            let alert = UIAlertController(title: "WOOHOO", message: "You WON YOU ARE THE BEST", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        win += 1
+            winLabelOutlet.text = "Win: \(win)"
+        }
+       else{
+            let alert = UIAlertController(title: "WAMP WAMP", message: "you're trash", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+            lose += 1
+                loseLabelOutlet.text = "Lose: \(lose)"
+        }
+        if(x == computersScore)
+        {
+            let alert = UIAlertController(title: "Tie", message: "Goodshit young blood", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        
+        }
+        
+        
+        final = 1
+    }
+    
+    @IBAction func playAgainAction(_ sender: UIButton) {
+        
+        if(final == 1)
+        {
+            Dice.count = 0
+            Dice.logoImages.removeAll()
+            roll = 0
+            imageDie1.image = nil
+            imageDie2.image = nil
+            imageDie3.image = nil
+            imageDie4.image = nil
+            imageDie5.image = nil
+            h = false
+            i = false
+            j = false
+            k = false
+            l = false
+            die1LabelOutlet.textColor = UIColor.black
+            die2LabelOutlet.textColor = UIColor.black
+            die3LabelOutlet.textColor = UIColor.black
+            die4LabelOutlet.textColor = UIColor.black
+            die5LabelOutlet.textColor = UIColor.black
+            q = 0
+             computersScore = Int.random(in: 18...28)
+            computersScoreOutlet.text = "Computer score \(computersScore)"
+            x = 0
+            yourScore.text = "Your score: 0"
+
+        }
+        else
+        {
+            
+                let alert = UIAlertController(title: "Error", message: "Please click finish game before playing again.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
+                alert.addAction(okAction)
+                present(alert, animated: true, completion: nil)
+        }
+        
+        
+        
+    }
     /*
      @IBAction func die3Action(_ sender: UIButton) {
      }
