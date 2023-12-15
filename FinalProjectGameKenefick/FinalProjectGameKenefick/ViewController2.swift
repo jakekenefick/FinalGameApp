@@ -51,15 +51,18 @@ class ViewController2: UIViewController {
     var randomInt = 0
     var roll = 0
     var q = 0
-    var win = 0
-    var lose = 0
     var final = 0
     var computersScore = 0
     var x = 0
+    var die1 = true
+    var die2 = true
+    var die3 = true
+    var die5 = true
+    var die4 = true
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        computersScore = Int.random(in: 18...28)
+        computersScore = Int.random(in: 24...28)
         computersScoreOutlet.text = "Computers Score: \(computersScore)"
         winLabelOutlet.text = "Win: 0"
         loseLabelOutlet.text = " Lose: 0"
@@ -83,7 +86,7 @@ class ViewController2: UIViewController {
             }
             
             
-                if(Dice.count == 0)
+                if(Dice.count == 0 && die1 == true )
                 {
                    
                     if(h == false){
@@ -127,8 +130,11 @@ class ViewController2: UIViewController {
                         imageDie1.image = UIImage(named: "die" + "\(a)")
                     }
             }
+         else if(Dice.count == 0){
+                Dice.count += 1
+            }
        
-            if(Dice.count == 1)
+            if(Dice.count == 1 && die2 == true )
             {
                 if( i == false ){
                     if (randomInt == 1){
@@ -168,7 +174,10 @@ class ViewController2: UIViewController {
                     imageDie2.image = UIImage(named: "die" + "\(b)")
                 }
             }
-            if(Dice.count == 2)
+            else if(Dice.count == 1){
+                Dice.count += 1
+            }
+            if(Dice.count == 2 && die3 == true)
             {
                 if( j == false){
                     if (randomInt == 1){
@@ -207,8 +216,11 @@ class ViewController2: UIViewController {
                     imageDie3.image = UIImage(named: "die" + "\(c)")
                 }
             }
+            else if(Dice.count == 2){
+                Dice.count += 1
+            }
           
-            if(Dice.count == 3)
+            if(Dice.count == 3 && die4 == true )
             {
                 if(k == false){
                     if (randomInt == 1){
@@ -247,8 +259,11 @@ class ViewController2: UIViewController {
                     imageDie4.image = UIImage(named: "die" + "\(d)")
                 }
             }
+            else if(Dice.count == 3) {
+                Dice.count+=1
+            }
             
-            if(Dice.count == 4)
+            if(Dice.count == 4 && die5 == true )
             {
                 if(l == false){
                     if (randomInt == 1){
@@ -287,6 +302,9 @@ class ViewController2: UIViewController {
                     imageDie5.image = UIImage(named: "die" + "\(e)")
                 }
             }
+            else if(Dice.count == 4) {
+                Dice.count+=1
+            }
            
             Dice.count += 1
             
@@ -300,7 +318,7 @@ class ViewController2: UIViewController {
         h = true
         x += a
         yourScore.text = "Your Score: \(x)"
-
+        die1 = false
       
     }
     
@@ -309,7 +327,7 @@ class ViewController2: UIViewController {
         i = true
        x += b
         yourScore.text = "Your Score: \(x)"
-
+        die2 = false
     }
     
     
@@ -318,7 +336,7 @@ class ViewController2: UIViewController {
        j = true
        x += c
         yourScore.text = "Your Score: \(x)"
-
+        die3 = false
     }
     
     
@@ -327,7 +345,7 @@ class ViewController2: UIViewController {
         k = true
        x += d
         yourScore.text = "Your Score: \(x)"
-
+        die4 = false
     }
     
     @IBAction func die5Action(_ sender: UIButton) {
@@ -335,12 +353,14 @@ class ViewController2: UIViewController {
         l = true
        x += e
         yourScore.text = "Your Score: \(x)"
-
+        die5 = false
     }
     
     @IBAction func rerollACtion(_ sender: UIButton) {
-        q = 0
-        roll+=1
+       
+            q = 0
+            roll+=1
+        
         
         if(roll>2){
             let alert = UIAlertController(title: "ERROR", message: "You can't roll more than 3 times!!!", preferredStyle: .alert)
@@ -363,18 +383,18 @@ class ViewController2: UIViewController {
             let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
-        win += 1
-            winLabelOutlet.text = "Win: \(win)"
+            Dice.wins += 1
+            winLabelOutlet.text = "Win: \(Dice.wins)"
         }
-       else{
+       if(z < computersScore){
             let alert = UIAlertController(title: "WAMP WAMP", message: "you're trash", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
-            lose += 1
-                loseLabelOutlet.text = "Lose: \(lose)"
+           Dice.lose += 1
+           loseLabelOutlet.text = "Lose: \(Dice.lose)"
         }
-        if(x == computersScore)
+        else
         {
             let alert = UIAlertController(title: "Tie", message: "Goodshit young blood", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "ok", style: .default , handler: nil)
@@ -414,6 +434,12 @@ class ViewController2: UIViewController {
             computersScoreOutlet.text = "Computer score \(computersScore)"
             x = 0
             yourScore.text = "Your score: 0"
+             die1 = true
+             die2 = true
+             die3 = true
+             die5 = true
+             die4 = true
+            final = 0 
 
         }
         else
